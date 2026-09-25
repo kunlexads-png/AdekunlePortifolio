@@ -20,6 +20,23 @@ const Navbar = () => {
     { name: 'Contact Me', href: '#contact' },
   ];
 
+  const handleNavClick = (
+  e: React.MouseEvent<HTMLAnchorElement>,
+  href: string
+) => {
+  e.preventDefault();
+
+  setIsOpen(false);
+
+  setTimeout(() => {
+    const element = document.querySelector(href);
+    element?.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
+  }, 150);
+};
+
   return (
     <nav className={`fixed w-full z-50 transition-all duration-300 ${
       scrolled 
@@ -72,14 +89,14 @@ const Navbar = () => {
           >
             <div className="flex flex-col p-6 gap-4">
               {navLinks.map((link) => (
-                <a 
-                  key={link.name} 
-                  href={link.href}
-                  onClick={() => setIsOpen(false)}
-                  className="text-lg font-medium text-slate-600 dark:text-slate-400"
-                >
-                  {link.name}
-                </a>
+                <a
+  key={link.name}
+  href={link.href}
+  onClick={(e) => handleNavClick(e, link.href)}
+  className="text-lg font-medium text-slate-600 dark:text-slate-400"
+>
+  {link.name}
+</a>
               ))}
               <button className="bg-primary text-white px-5 py-3 rounded-xl text-center font-medium">
                 Hire Me
