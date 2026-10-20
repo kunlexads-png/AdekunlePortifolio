@@ -4,14 +4,14 @@ import { Project, Skill } from '../types';
 
 export const PROJECTS: Project[] = [
   {
-    id: 1,
-    title: "AI AIIVENTORYDASBORD",
-    description: "An intelligent inventory management system using AI to predict stock levels and optimize supply chain operations.",
-    image: "https://picsum.photos/seed/inventory/800/600",
-    tags: ["React", "Python", "TensorFlow", "Tailwind"],
-    link: "https://kunlexads-png.github.io/AIIVENTORYDASBORD/",
-    github:"https://kunlexads-png.github.io/AIIVENTORYDASBORD/"
-  },
+  id: 1,
+  title: "KCITY MEWS",
+  description: "An Online shopping platform for a wide range of products, featuring user authentication, product listings, and a shopping cart.",
+  image: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=800&q=80",
+  tags: ["React", "Python", "TensorFlow", "Tailwind"],
+  link: "https://kcity-mews.vercel.app/",
+  github: "https://github.com/kunlexads-png/kcity-mews.git"
+},
   {
     id: 2,
     title: "Quality Dashboard",
@@ -228,6 +228,15 @@ export const PROJECTS: Project[] = [
   link: "https://onlinebankingsystem-xi.vercel.app/",
   github: "https://onlinebankingsystem-xi.vercel.app/"
 }
+{
+    id: 26,
+    title: "AI AIIVENTORYDASBORD",
+    description: "An intelligent inventory management system using AI to predict stock levels and optimize supply chain operations.",
+    image: "https://picsum.photos/seed/inventory/800/600",
+    tags: ["React", "Python", "TensorFlow", "Tailwind"],
+    link: "https://kunlexads-png.github.io/AIIVENTORYDASBORD/",
+    github:"https://kunlexads-png.github.io/AIIVENTORYDASBORD/"
+  }
 ];
 
 export const SKILLS: Skill[] = [

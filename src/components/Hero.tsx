@@ -23,12 +23,12 @@ const Hero = () => {
           </span>
 
           <h1 className="text-5xl md:text-7xl font-display font-bold leading-tight mb-6 text-slate-900 dark:text-white">
-            Building scalable web application <br />
+            Building scalable H <br />
             <span className="text-primary">
-              <TypingText texts={['using', 'Full Stack', 'Development', 'with AI integration','to create', 'inteligent','secure']} />
+              <TypingText texts={['using', 'Full Stack', 'Development', 'with AI integration','to create', 'High-Performance Solutions',]} />
             </span>{' '}
             <br />
-            and High-Performance Solutions.
+            .
           </h1>
 
           <p className="text-lg text-slate-600 dark:text-slate-400 mb-8 max-w-lg leading-relaxed">
