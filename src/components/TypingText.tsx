@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import { motion } from 'motion/react';
 
@@ -8,46 +9,67 @@ interface TypingTextProps {
   pauseTime?: number;
 }
 
-const TypingText: React.FC<TypingTextProps> = ({ 
-  texts, 
-  typingSpeed = 150, 
-  deletingSpeed = 100, 
-  pauseTime = 2000 
+const TypingText: React.FC<TypingTextProps> = ({
+  texts,
+  typingSpeed = 100,
+  deletingSpeed = 50,
+  pauseTime = 1800,
 }) => {
   const [currentTextIndex, setCurrentTextIndex] = useState(0);
   const [currentText, setCurrentText] = useState('');
   const [isDeleting, setIsDeleting] = useState(false);
 
   useEffect(() => {
-    const fullText = texts[currentTextIndex];
-    
-    const timeout = setTimeout(() => {
+    if (texts.length === 0) return;
+
+    const fullText = texts[currentTextIndex] ?? '';
+
+    const delay =
+      !isDeleting && currentText === fullText
+        ? pauseTime
+        : isDeleting
+          ? deletingSpeed
+          : typingSpeed;
+
+    const timeout = window.setTimeout(() => {
       if (!isDeleting) {
-        // Typing
-        setCurrentText(fullText.substring(0, currentText.length + 1));
         if (currentText === fullText) {
-          setTimeout(() => setIsDeleting(true), pauseTime);
+          setIsDeleting(true);
+        } else {
+          setCurrentText(fullText.slice(0, currentText.length + 1));
         }
       } else {
-        // Deleting
-        setCurrentText(fullText.substring(0, currentText.length - 1));
-        if (currentText === '') {
+        if (currentText.length > 0) {
+          setCurrentText(fullText.slice(0, currentText.length - 1));
+        } else {
           setIsDeleting(false);
-          setCurrentTextIndex((prev) => (prev + 1) % texts.length);
+          setCurrentTextIndex((index) => (index + 1) % texts.length);
         }
       }
-    }, isDeleting ? deletingSpeed : typingSpeed);
+    }, delay);
 
-    return () => clearTimeout(timeout);
-  }, [currentText, isDeleting, currentTextIndex, texts, typingSpeed, deletingSpeed, pauseTime]);
+    return () => window.clearTimeout(timeout);
+  }, [
+    texts,
+    currentTextIndex,
+    currentText,
+    isDeleting,
+    typingSpeed,
+    deletingSpeed,
+    pauseTime,
+  ]);
 
   return (
-    <span className="inline-block min-h-[1.2em]">
-      {currentText}
+    <span
+      className="inline-block min-h-[1.5em] text-emerald-600 dark:text-emerald-400"
+      aria-live="polite"
+    >
+      <span>{currentText || '\u00A0'}</span>
       <motion.span
         animate={{ opacity: [1, 0] }}
         transition={{ duration: 0.8, repeat: Infinity }}
-        className="inline-block w-1 h-[1em] bg-primary ml-1 align-middle"
+        className="inline-block w-[3px] h-[0.9em] bg-emerald-600 dark:bg-emerald-400 ml-1 align-middle"
+        aria-hidden="true"
       />
     </span>
   );

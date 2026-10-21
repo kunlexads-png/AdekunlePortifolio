@@ -21,15 +21,29 @@ const Hero = () => {
           <span className="inline-block px-4 py-1.5 bg-emerald-100 dark:bg-emerald-900/30 text-emerald-700 dark:text-emerald-400 rounded-full text-sm font-semibold mb-6">
             Available for new opportunities
           </span>
+          
+<h1 className="text-4xl md:text-6xl lg:text-7xl font-display font-bold leading-tight mb-6 text-slate-900 dark:text-white">
+  <span className="block">
+    Building Scalable,
+  </span>
 
-          <h1 className="text-5xl md:text-7xl font-display font-bold leading-tight mb-6 text-slate-900 dark:text-white">
-            Building scalable H <br />
-            <span className="text-primary">
-              <TypingText texts={['using', 'Full Stack', 'Development', 'with AI integration','to create', 'High-Performance Solutions',]} />
-            </span>{' '}
-            <br />
-            .
-          </h1>
+  <span className="block">
+    High-Performance
+  </span>
+
+  <span className="block mt-2 min-h-[1.5em]">
+    <TypingText
+      texts={[
+        'Web Applications',
+        'AI-Powered Solutions',
+        'Intelligent Chatbots',
+        'Responsive Websites',
+        'Innovative Digital Experiences',
+      ]}
+    />
+  </span>
+</h1>
+
 
           <p className="text-lg text-slate-600 dark:text-slate-400 mb-8 max-w-lg leading-relaxed">
             Hi, I'm{' '}
@@ -81,11 +95,12 @@ const Hero = () => {
             </a>
 
             <a
-              href=""
-              className="text-slate-400 hover:text-primary transition-colors"
-            >
-              <Mail className="w-6 h-6" />
-            </a>
+  href="mailto:Kunlex4star@gmail.com"
+  aria-label="Send me an email"
+  className="text-slate-400 hover:text-primary transition-colors"
+>
+  <Mail className="w-6 h-6" />
+</a>
           </div>
         </motion.div>
 

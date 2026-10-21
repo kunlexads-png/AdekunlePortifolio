@@ -30,7 +30,7 @@ const About = () => {
             <div className="mt-10 grid grid-cols-2 gap-6">
               <div className="space-y-2">
                 <p className="text-xs text-slate-400 uppercase tracking-widest font-bold">Experience</p>
-                <p className="text-lg font-semibold text-secondary dark:text-white">5+ Years</p>
+                <p className="text-lg font-semibold text-secondary dark:text-white">3+ Years</p>
               </div>
               <div className="space-y-2">
                 <p className="text-xs text-slate-400 uppercase tracking-widest font-bold">Projects</p>

@@ -227,7 +227,8 @@ export const PROJECTS: Project[] = [
   tags: ["React", "TypeScript", "Node.js", "PostgreSQL"],
   link: "https://onlinebankingsystem-xi.vercel.app/",
   github: "https://onlinebankingsystem-xi.vercel.app/"
-}
+},
+
 {
     id: 26,
     title: "AI AIIVENTORYDASBORD",
